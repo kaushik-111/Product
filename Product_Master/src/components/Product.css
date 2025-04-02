@@ -1,0 +1,510 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.light-theme body {
+  background-color: white;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f1f1;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #f1f1f1;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.message {
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.form-container {
+  background: linear-gradient(145deg, #333, #222);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 1000px; /* Ensure form doesn't stretch too wide */
+}
+
+.form-container:hover {
+  transform: scale(1.02);
+}
+
+.search-container label,
+.form-container label {
+  color: #f1f1f1;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: #444;
+  color: #f1f1f1;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: black;
+  outline: none;
+  background-color: #555;
+}
+
+.submit-btn {
+  background-color: #555;
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: black;
+}
+
+.category-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #333, #222);
+}
+
+.category-table th,
+.category-table td {
+  padding: 14px 20px;
+  text-align: left;
+  border: 1px solid #555;
+  font-size: 1rem;
+}
+
+.category-table th {
+  background-color: #333;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-table tr:nth-child(even) {
+  background-color: #2d2d2d;
+}
+
+.category-table tr:hover {
+  background-color: #444;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.action-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn {
+  background-color: #555;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  margin-right: 12px;
+}
+
+.delete-btn:hover {
+  background-color: #556;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.edit-btn {
+  background-color: #555;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+.edit-btn:hover {
+  background-color: #557;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.search-sort-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.search-container {
+  flex: 1;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.sort-buttons button {
+  background-color: #555;
+  color: white;
+  padding: 12px 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.sort-buttons button:hover {
+  background-color: #444;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  background-color: #444;
+  color: #f1f1f1;
+  border: 1px solid #555;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.input-field:focus {
+  border-color: black;
+  outline: none;
+  background-color: #555;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-height: 80%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.close-btn {
+  position: absolute;
+  top: -1px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-content {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+@media (max-width: 1024px) {
+  .category-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .category-table th,
+  .category-table td {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .category-table {
+    margin-top: 20px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  .input-field {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+
+  .category-table th,
+  .category-table td {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .category-table {
+    margin-top: 20px;
+  }
+
+  .action-btn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  * {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .form-container {
+    padding: 10px;
+  }
+
+  .input-field {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  .category-table th,
+  .category-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .action-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .category-table {
+    margin-top: 10px;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .modal-content::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .category-table {
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+  .category-container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .form-container {
+    padding: 8px;
+  }
+
+  .input-field {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .submit-btn {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  .category-table th,
+  .category-table td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .action-btn {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .modal-content {
+    width: 95%; /* Full width for very small screens */
+  }
+
+  /* Hide scrollbar but still allow scrolling */
+  .modal-content::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+}
+.light-theme .form-container label {
+  color: #050505;
+}
+.light-theme .sort-buttons button {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.light-theme .sort-buttons button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.light-theme .form-container {
+  background: linear-gradient(145deg, #fff, #f1f1f1); /* Light theme form */
+}
+.light-theme .search-container label {
+  color: #333;
+}
+
+.light-theme .category-table {
+  background: #f1f1f1; /* White table */
+}
+
+.light-theme .category-table th,
+.light-theme .category-table td {
+  color: #333; /* Dark text color */
+  background-color: #f1f1f1;
+}
+
+.light-theme .input-field {
+  background-color: #f1f1f1; /* White background for input */
+}
+
+.light-theme .submit-btn {
+  background-color: #007bff; /* Blue background for submit */
+}
+
+.light-theme .delete-btn {
+  background-color: #ff4d4d; /* Red for delete */
+}
+
+.light-theme .edit-btn {
+  background-color: #ffc107; /* Yellow for edit */
+}
+
+.light-theme .category-table tr:nth-child(even) {
+  background-color: #f1f1f1; /* Light alternating row color */
+}
+.light-theme,
+.light-theme body {
+  background-color: #f1f1f1 !important; /* Light grey background */
+  color: #333 !important; /* Dark text color */
+  width: 100%;
+  min-width: 1525px;
+  height: 100%;
+  min-height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chart-container {
+  background-color: rgba(255, 255, 255, 0.1); /* हल्का पारदर्शी बैकग्राउंड */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* पाई चार्ट के लिए अलग स्टाइल */
+.pie-chart-container {
+  background-color: rgba(61, 60, 60, 0.2); /* ग्रे बैकग्राउंड */
+  padding: 20px;
+  border-radius: 10px;
+}
+
